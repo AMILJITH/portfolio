@@ -7,8 +7,6 @@ function App() {
     <div >
       <Navbar />
       <Intro />
-      
-     
     </div>
   );
 }

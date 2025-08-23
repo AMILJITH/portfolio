@@ -1,22 +1,48 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './navbar.css'
 import logo from '../../assets/logo.png'
-import {Link} from 'react-scroll';
+import { Link } from 'react-scroll'
 import contactImg from '../../assets/contact.png'
-
+import { Menu, X } from 'lucide-react' // for hamburger icons (you can use any icon)
 
 const Navbar = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
     <nav className="navbar">
-        <img src={logo} className='logo' alt=""  />
-        <div className="navbarmenus">
-          <Link class="desktopmenu">HOME</Link>
-          <Link class="desktopmenu">ABOUT</Link>
-          <Link class="desktopmenu">PORTFOLIO</Link>
-          <Link class="desktopmenu">PROJECTS</Link>
+      {/* Logo */}
+      <img src={logo} className="logo" alt="logo" />
 
-        </div>
-        <button className='desktopMenuButton'><img src={contactImg} alt='' className='desktopMenuImg'/>CONTACT ME</button>
+      {/* Desktop Menu */}
+      <div className="navbarmenus desktop">
+        <Link to="intro" smooth={true} duration={500} className="desktopmenu">HOME</Link>
+        <Link to="about" smooth={true} duration={500} className="desktopmenu">ABOUT</Link>
+        <Link to="portfolio" smooth={true} duration={500} className="desktopmenu">PORTFOLIO</Link>
+        <Link to="projects" smooth={true} duration={500} className="desktopmenu">PROJECTS</Link>
+      </div>
+
+      {/* Contact Button (desktop only) */}
+      <button className="desktopMenuButton desktop">
+        <img src={contactImg} alt="" className="desktopMenuImg" />CONTACT ME
+      </button>
+
+      {/* Mobile Hamburger */}
+      <div className="mobile-menu-icon" onClick={() => setIsOpen(!isOpen)}>
+        {isOpen ? <X size={28} color="white" /> : <Menu size={28} color="white" />}
+      </div>
+
+      {/* Mobile Dropdown */}
+      {isOpen && (
+        <div className="mobile-menu">
+          <Link to="intro" smooth={true} duration={500} onClick={() => setIsOpen(true)}>HOME</Link>
+          <Link to="about" smooth={true} duration={500} onClick={() => setIsOpen(false)}>ABOUT</Link>
+          <Link to="portfolio" smooth={true} duration={500} onClick={() => setIsOpen(false)}>PORTFOLIO</Link>
+          <Link to="projects" smooth={true} duration={500} onClick={() => setIsOpen(false)}>PROJECTS</Link>
+          <button className="desktopMenuButton">
+            <img src={contactImg} alt="" className="desktopMenuImg" />CONTACT ME
+          </button>
+        </div>
+      )}
     </nav>
   )
 }
