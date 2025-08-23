@@ -1,0 +1,71 @@
+.navbar{
+    height: 5rem;
+    width: 100%;
+    margin: 0 auto;
+    padding:20px;
+    display: flex;
+   justify-content: space-between;
+
+
+   margin-right: 20px;
+    align-items: center;
+    position: sticky;
+   
+    z-index: 3;
+    background-color: black;
+
+    
+
+
+}
+.logo{
+    height: 4rem;
+    width: 15rem;
+   
+}
+.navbarmenus{
+    display: flex;
+    gap: 25px;
+    cursor: pointer;
+    
+  
+}
+.desktopMenuButton:hover{
+    background-color: yellow;
+}
+.desktopMenuButton {
+    color: black;
+    border-radius: 20px;
+    padding: 5px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px 10px;
+    cursor: pointer;
+    
+
+    
+    font-weight: 500;
+    background-color: whitesmoke;
+    font-family: 'Times New Roman', Times, serif;
+    
+    
+
+}
+.navbarmenus a{
+    color: white;
+    font-family: 'Times New Roman', Times, serif;
+}
+.desktopMenuImg{
+    object-fit: cover;
+    height: 1.5rem;
+    width: 1.5rem;
+    margin-right: 5px;
+    cursor: pointer;
+
+    
+}
+.navbar a:hover{
+    color: yellow;
+    transition: all 0.3s ease-in-out;
+}
