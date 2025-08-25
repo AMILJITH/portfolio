@@ -16,9 +16,9 @@ const Navbar = () => {
       {/* Desktop Menu */}
       <div className="navbarmenus desktop">
         <Link to="intro" smooth={true} duration={500} className="desktopmenu">HOME</Link>
-        <Link to="about" smooth={true} duration={500} className="desktopmenu">ABOUT</Link>
-        <Link to="portfolio" smooth={true} duration={500} className="desktopmenu">PORTFOLIO</Link>
-        <Link to="projects" smooth={true} duration={500} className="desktopmenu">PROJECTS</Link>
+        <Link to="skill" smooth={true} duration={500} className="desktopmenu">ABOUT</Link>
+        <Link to="works" smooth={true} duration={500} className="desktopmenu">PORTFOLIO</Link>
+        <Link to="project" smooth={true} duration={500} className="desktopmenu">PROJECTS</Link>
       </div>
 
       {/* Contact Button (desktop only) */}
@@ -35,9 +35,9 @@ const Navbar = () => {
       {isOpen && (
         <div className="mobile-menu">
           <Link to="intro" smooth={true} duration={500} onClick={() => setIsOpen(true)}>HOME</Link>
-          <Link to="about" smooth={true} duration={500} onClick={() => setIsOpen(false)}>ABOUT</Link>
-          <Link to="portfolio" smooth={true} duration={500} onClick={() => setIsOpen(false)}>PORTFOLIO</Link>
-          <Link to="projects" smooth={true} duration={500} onClick={() => setIsOpen(false)}>PROJECTS</Link>
+          <Link to="skill" smooth={true} duration={500} onClick={() => setIsOpen(false)}>ABOUT</Link>
+          <Link to="work" smooth={true} duration={500} onClick={() => setIsOpen(false)}>PORTFOLIO</Link>
+          <Link to="project" smooth={true} duration={500} onClick={() => setIsOpen(false)}>PROJECTS</Link>
           <button className="desktopMenuButton">
             <img src={contactImg} alt="" className="desktopMenuImg" />CONTACT ME
           </button>
