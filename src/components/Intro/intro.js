@@ -15,8 +15,8 @@ const Intro = () => {
             <span className="job">Full Stack Developer</span>
           </span>
           <p className="description">
-            I am a passionate full-stack developer with expertise in creating dynamic and responsive web applications.<br />
-            Skilled in both front-end and back-end technologies, <br />
+            I am a passionate full-stack developer with expertise in creating dynamic and responsive web applications.
+            Skilled in both front-end and back-end technologies,
             I thrive on building seamless user experiences and efficient server-side solutions.
           </p>
           <Link>
