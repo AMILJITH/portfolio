@@ -13,7 +13,7 @@ admin, user, and the seller where the user can buy products, seller can add and 
 with viewing the order details. The admin can view and control the activities of both seller and user. </p>
       </div>
       <div className="projectcard">
-        <h3 className='projecttitle'>PORTFOLIO WEBSITE</h3>
+        <h3 className='projecttitle'>PORTFOLIO WEBSITE: </h3>
         <p className='projectdescription'>Designed and developed a responsive personal portfolio website to showcase my skills, 
     projects, and professional journey as a Full Stack Developer and Video Editor. 
     The website features a clean UI with smooth navigation, dynamic project cards, 

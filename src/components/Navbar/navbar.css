@@ -94,3 +94,9 @@
     display: block; /* show hamburger */
   }
 }
+.active {
+  color: yellow;
+  font-weight: bold;
+  border-bottom: 2px solid yellow;
+  padding-bottom: 2px;
+}
