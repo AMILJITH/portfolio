@@ -9,29 +9,32 @@ import emailjs from '@emailjs/browser';
 const Contact = () => {
   const form = useRef();
 
-const sendEmail = (e) => {
-  e.preventDefault();
+  const sendEmail = (e) => {
+    e.preventDefault();
 
-  emailjs
-    .sendForm(
-      'service_si2s6gt',     // your Service ID
-      'template_z2si1qz',    // your Template ID
-      form.current,
-      'NIyjjOYkQTyXsGSyHuJMB' // your Public Key
-    )
-    .then(
-      () => {
-        console.log('SUCCESS!');
-        alert('Message sent successfully ✅');
-        form.current.reset();
-      },
-      (error) => {
-        console.error('FAILED...', error.text);
-        alert('Failed to send message ❌ Check console for details.');
-      }
-    );
-};
-
+    emailjs
+      .send(
+        'service_si2s6gt',   // Service ID
+        'template_z2si1qz',  // Template ID
+        {
+          your_name: form.current.your_name.value,   // ✅ matches {{your_name}}
+          your_email: form.current.your_email.value, // ✅ matches {{your_email}}
+          message: form.current.message.value,       // ✅ matches {{message}}
+        },
+        'NIyjjOYkQTyXsGSyHuJMB' // Public Key
+      )
+      .then(
+        () => {
+          console.log('SUCCESS!');
+          alert('Message sent successfully ✅');
+          form.current.reset();
+        },
+        (error) => {
+          console.error('FAILED...', error);
+          alert('Failed to send message ❌ Check console for details.');
+        }
+      );
+  };
 
   return (
     <section className="contactpage" id="Contact">
@@ -44,21 +47,21 @@ const sendEmail = (e) => {
         <input
           type="text"
           placeholder="Your Name"
-          name="your_name"
+          name="your_name"  // ✅ must match template
           className="name"
           required
         />
         <input
           type="email"
           placeholder="Your Email"
-          name="your_email"
+          name="your_email" // ✅ must match template
           className="email"
           required
         />
         <textarea
           className="message"
           placeholder="Your Message"
-          name="message"
+          name="message"    // ✅ must match template
           rows="5"
           required
         ></textarea>
@@ -77,7 +80,11 @@ const sendEmail = (e) => {
         <a href="https://youtube.com/" target="_blank" rel="noreferrer">
           <img src={Youtube} alt="Youtube" className="link" />
         </a>
-        <a href="https://instagram.com/" target="_blank" rel="noreferrer">
+        <a
+          href="https://www.instagram.com/amiljith_js?igsh=MWx0N2JqZXNhbXhkbw%3D%3D&utm_source=qr"
+          target="_blank"
+          rel="noreferrer"
+        >
           <img src={Instagram} alt="Instagram" className="link" />
         </a>
       </div>
