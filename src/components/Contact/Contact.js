@@ -26,12 +26,12 @@ const Contact = () => {
       .then(
         (response) => {
           console.log('SUCCESS!', response.status, response.text);
-          alert('Message sent successfully ✅');
+          
           form.current.reset();
         },
         (error) => {
           console.error('FAILED...', error);
-          alert('Failed to send message ❌ Check console for details.');
+          alert('Failed to send message ');
         }
       );
   };
