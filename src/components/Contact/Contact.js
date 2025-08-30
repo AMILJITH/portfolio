@@ -14,18 +14,18 @@ const Contact = () => {
 
     emailjs
       .send(
-        'service_si2s6gt',   // Service ID
-        'template_z2si1qz',  // Template ID
+        'service_si2s6gt', 
+        'template_z2si1qz',    
         {
-          your_name: form.current.your_name.value,   // ✅ matches {{your_name}}
-          your_email: form.current.your_email.value, // ✅ matches {{your_email}}
-          message: form.current.message.value,       // ✅ matches {{message}}
+          your_name: form.current.your_name.value,
+          your_email: form.current.your_email.value,
+          message: form.current.message.value,
         },
-        'NIyjjOYkQTyXsGSyHuJMB' // Public Key
+        'SGDfEu6AzfL7PtXMi'  
       )
       .then(
-        () => {
-          console.log('SUCCESS!');
+        (response) => {
+          console.log('SUCCESS!', response.status, response.text);
           alert('Message sent successfully ✅');
           form.current.reset();
         },
@@ -47,21 +47,21 @@ const Contact = () => {
         <input
           type="text"
           placeholder="Your Name"
-          name="your_name"  // ✅ must match template
+          name="your_name"  
           className="name"
           required
         />
         <input
           type="email"
           placeholder="Your Email"
-          name="your_email" // ✅ must match template
+          name="your_email" 
           className="email"
           required
         />
         <textarea
           className="message"
           placeholder="Your Message"
-          name="message"    // ✅ must match template
+          name="message"   
           rows="5"
           required
         ></textarea>
